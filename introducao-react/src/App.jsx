@@ -1,12 +1,11 @@
-import  List  from "./components/List";
+import { RouterProvider } from "react-router-dom";
+import { routes } from "./routes";
 
 export default function App() {
 
-  const convidados= ["Samuel", "Lopes", "Teste"];
-
   return (
-    <>
-    <List nome="Convidados" items={convidados} />
-    </>
+
+    <RouterProvider router={routes} />
+
   );
 }
