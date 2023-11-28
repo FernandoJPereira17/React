@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useDebugValue, useEffect, useState } from "react";
 
 export function Inputs() {
   const [name, setName] = useState("");
@@ -18,6 +18,11 @@ export function Inputs() {
     });
   }
 
+  useEffect(()=>{
+    console.log(user);
+
+  },[user.name, user.lastName]);
+
 //   function handleName(e) {
 //     setName(e.target.value);
 //   }
@@ -25,6 +30,15 @@ export function Inputs() {
 //   function handleLastName(e) {
 //     setLastName(e.target.value)
 //   }
+
+function handleDateShow(value){
+    const date = new Date (value).toLocaleDateString("pt-br", {
+       dateStyle: "short",
+       hour12:false,
+       timeZone:"UTC", 
+    });
+        return date;
+}
 
   return (
     <>
@@ -73,7 +87,7 @@ export function Inputs() {
           name="date"
           placeholder="Data Nascimento"
           value={user.date}
-          onChange={handleInput}
+          onChange={handleDateShow}
         //   onChange={(e) => setLastName(e.target.value)}
         />
       </div>
@@ -83,7 +97,7 @@ export function Inputs() {
         <p className="text-lg items-center">Sobrenome:{user.lastName}</p>
         <p className="text-lg items-center">Celular:{user.celular}</p>
         <p className="text-lg items-center">E-mail:{user.email}</p>
-        <p className="text-lg items-center">Data Nasc:{user.date}</p>
+        <p className="text-lg items-center">Data Nasc:{user.date ? handleDateShow(user.date) : ""}</p>
       </div>
     </>
   );
@@ -97,5 +111,7 @@ export function Inputs() {
    * em cada P rendenrizar um dos valores
    * <p>name</p>
    * <p>lastName</p>
+   *
    */
 }
+
