@@ -1,4 +1,4 @@
-import logo from "../../assets/imagens/logo-digital.png.webp"
+import logo from "../../../assets/imagens/logo-digital.png.webp"
 
 export function Header() {
   return (

@@ -1,6 +1,8 @@
 import { createBrowserRouter } from "react-router-dom";
 import { Mainlayout } from "../layouts/MainLayout";
-import Hooks from "../pages/Hooks";
+import ReactHooks from "../pages/ReactHooks";
+import UsersPage from "../pages/ReactHooks/Users";
+
 
 export const routes = createBrowserRouter([
     
@@ -10,7 +12,11 @@ export const routes = createBrowserRouter([
         children: [
             {
                 path:'/',
-                element: <Hooks />,
+                element: <ReactHooks />,
+            },
+            {
+                path:'/usuarios',
+                element: <UsersPage />,
             },
             {
                 path:'/clientes',

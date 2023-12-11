@@ -9,6 +9,9 @@ export function SideBar(){
                     <Link to="/">Home</Link>
                 </li>
                 <li className="text-lg font-semibold">
+                    <Link to="/usuarios">Usuários</Link>
+                </li>
+                <li className="text-lg font-semibold">
                     <Link to="/produtos">Produtos</Link>
                 </li>
                 <li className="text-lg font-semibold">

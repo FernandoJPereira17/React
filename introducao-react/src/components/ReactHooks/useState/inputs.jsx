@@ -34,11 +34,15 @@ export function Inputs() {
 function handleDateShow(value){
     const date = new Date (value).toLocaleDateString("pt-br", {
        dateStyle: "short",
-       hour12:false,
+       hour12: false,
        timeZone:"UTC", 
     });
         return date;
 }
+
+useEffect(() => {
+  console.log(handleDateShow(user.date));
+}, []);
 
   return (
     <>
@@ -97,7 +101,7 @@ function handleDateShow(value){
         <p className="text-lg items-center">Sobrenome:{user.lastName}</p>
         <p className="text-lg items-center">Celular:{user.celular}</p>
         <p className="text-lg items-center">E-mail:{user.email}</p>
-        <p className="text-lg items-center">Data Nasc:{user.date ? handleDateShow(user.date) : ""}</p>
+      <p className="text-lg items-center">Data Nasc:{user.date ? handleDateShow(user.date) : ""}</p>
       </div>
     </>
   );

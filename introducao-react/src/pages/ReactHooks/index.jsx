@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Inputs } from "../../components/ReactHooks/useState/inputs";
+import { UseEffectComponent } from "../../components/ReactHooks/useEffect";
 
 export default function Hooks() {
   const [counter, setCounter] = useState(0);
@@ -81,6 +82,7 @@ export default function Hooks() {
         </button>
         
         <Inputs/>
+        <UseEffectComponent/>
     </>
   );
 }
