@@ -17,7 +17,6 @@ export function useUsersForm() {
   function handleSubmit(e) {
     e.preventDefault();
     createUser();
-    fetchAllUsers();
   }
 
   async function createUser() {

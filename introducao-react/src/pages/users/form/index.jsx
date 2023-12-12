@@ -1,8 +1,10 @@
-import { useUsersForm } from "./useUsersForm";
+// import { useUsersForm } from "./useUsersForm";
 
-export function Form (){
-    const { user, handleUser, handleSubmit } = useUsersForm();
+export function Form ( { user, handleUser, handleSubmit} ){
+    // const { user, handleUser, handleSubmit } = useUsersForm();
+    
     return (
+        <>
         <form
           onSubmit={handleSubmit}
           className="
@@ -43,5 +45,7 @@ export function Form (){
             Enviar
           </button>
         </form>
+
+        </>
     );
 }
